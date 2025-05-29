@@ -1,0 +1,79 @@
+{
+    "@@locale": "ca",
+  
+    "userCreationSuccess": "Usuari creat amb èxit",
+    "userNotFound": "Usuari no trobat",
+    "register": "Registrar-se",
+  
+    "email": "Correu electrònic",
+    "requiredField": "Aquest camp és obligatori",
+    "password": "Contrasenya",
+  
+    "createUser": "Crear usuari",
+  
+    "login": "Iniciar sessió",
+  
+    "newHere": "Nou aquí?",
+  
+    "welcomeBack": "Benvingut de nou!",
+    "loginPage": "Pàgina d'inici de sessió",
+  
+    "dateTime": "Data i hora",
+    "score": "Puntuació (%)",
+    "autonomy": "Autonomia",
+    "competence": "Competència",
+    "relatedness": "Relació",
+    "wellbeing": "Benestar",
+  
+    "startTest": "Començar test de benestar",
+    "wellbeingOverTime": "Benestar al llarg del temps",
+  
+    "wellbeingRecommendations": "Recomanacions de benestar",
+    "improveWelbeing": "La següent llista mostra els ítems més crítics que podrien millorar el teu benestar si s’aborden.",
+    "results": "Resultats",
+    "goHome": "Tornar a l'inici",
+  
+    "wellbeingResults": "Resultats del benestar",
+    "positiveItems": "Aquests són alguns ítems que contribueixen positivament al teu benestar:",
+    "noItems": "Cap ítem, però no et rendeixis!",
+    "improveItems": "Per millorar el teu benestar, aquestes són algunes àrees que poden requerir atenció:",
+    "noImprove": "Cap àrea a millorar, ho estàs fent molt bé!",
+    "autonomyChart": "Gràfic d'autonomia",
+    "autonomyScore": "Puntuació d'autonomia",
+    "competenceChart": "Gràfic de competència",
+    "competenceScore": "Puntuació de competència",
+    "relatednessChart": "Gràfic de relació",
+    "relatednessScore": "Puntuació de relació",
+    "overallScore": "Puntuació general",
+    "next": "Següent",
+    "percentage": "Percentatge",
+    "overall": "General",
+  
+    "activity": "Activitat: ",
+    "agreeDisagree": "Quant estàs d'acord o en desacord amb les següents afirmacions?",
+    "disagree": "En desacord",
+    "agree": "D'acord",
+    "goBack": "Tornar enrere",
+    "previous": "Anterior",
+    "submit": "Enviar",
+  
+    "activityCompleted": "Activitat completada!",
+    "seeResults": "Veure resultats",
+  
+    "updatePassword": "Actualitzar contrasenya",
+    "currentPassword": "Contrasenya actual",
+    "newPassword": "Nova contrasenya",
+    "repeatNewPassword": "Repetir nova contrasenya",
+    "save": "Desar",
+  
+    "passwordChangedSuccessfully": "Contrasenya canviada amb èxit",
+  
+    "settings": "Configuració",
+    "language": "Llengua",
+    "english": "Anglès",
+    "spanish": "Castellà",
+    "catalan": "Català",
+    "darkMode": "Mode fosc",
+    "signOut": "Tancar sessió"
+  }
+  

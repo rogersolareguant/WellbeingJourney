@@ -1,0 +1,79 @@
+{
+    "@@locale": "es",
+  
+    "userCreationSuccess": "Usuario creado con éxito",
+    "userNotFound": "Usuario no encontrado",
+    "register": "Registrarse",
+  
+    "email": "Correo electrónico",
+    "requiredField": "Este campo es obligatorio",
+    "password": "Contraseña",
+  
+    "createUser": "Crear usuario",
+  
+    "login": "Iniciar sesión",
+  
+    "newHere": "¿Nuevo aquí?",
+  
+    "welcomeBack": "¡Bienvenido de nuevo!",
+    "loginPage": "Página de inicio de sesión",
+  
+    "dateTime": "Fecha y hora",
+    "score": "Puntuación (%)",
+    "autonomy": "Autonomía",
+    "competence": "Competencia",
+    "relatedness": "Relación",
+    "wellbeing": "Bienestar",
+  
+    "startTest": "Empezar test de bienestar",
+    "wellbeingOverTime": "Bienestar a lo largo del tiempo",
+  
+    "wellbeingRecommendations": "Recomendaciones de bienestar",
+    "improveWelbeing": "La siguiente lista presenta los elementos más críticos que podrían mejorar tu bienestar si se abordan.",
+    "results": "Resultados",
+    "goHome": "Ir al inicio",
+  
+    "wellbeingResults": "Resultados del bienestar",
+    "positiveItems": "Estos son algunos elementos que contribuyen positivamente a tu bienestar:",
+    "noItems": "No hay elementos, ¡pero no te rindas!",
+    "improveItems": "Para mejorar tu bienestar, estas son algunas áreas que podrían necesitar atención:",
+    "noImprove": "¡No hay áreas a mejorar, lo estás haciendo genial!",
+    "autonomyChart": "Gráfico de autonomía",
+    "autonomyScore": "Puntuación de autonomía",
+    "competenceChart": "Gráfico de competencia",
+    "competenceScore": "Puntuación de competencia",
+    "relatednessChart": "Gráfico de relación",
+    "relatednessScore": "Puntuación de relación",
+    "overallScore": "Puntuación general",
+    "next": "Siguiente",
+    "percentage": "Porcentaje",
+    "overall": "General",
+  
+    "activity": "Actividad: ",
+    "agreeDisagree": "¿Cuánto estás de acuerdo o en desacuerdo con las siguientes afirmaciones?",
+    "disagree": "En desacuerdo",
+    "agree": "De acuerdo",
+    "goBack": "Volver",
+    "previous": "Anterior",
+    "submit": "Enviar",
+  
+    "activityCompleted": "¡Actividad completada!",
+    "seeResults": "Ver resultados",
+  
+    "updatePassword": "Actualizar contraseña",
+    "currentPassword": "Contraseña actual",
+    "newPassword": "Nueva contraseña",
+    "repeatNewPassword": "Repite la nueva contraseña",
+    "save": "Guardar",
+  
+    "passwordChangedSuccessfully": "Contraseña cambiada con éxito",
+  
+    "settings": "Ajustes",
+    "language": "Idioma",
+    "english": "Inglés",
+    "spanish": "Español",
+    "catalan": "Catalán",
+    "darkMode": "Modo oscuro",
+    "signOut": "Cerrar sesión"
+  }
+  

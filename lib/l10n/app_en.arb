@@ -1,0 +1,79 @@
+{
+    "@@locale": "en",
+
+    "userCreationSuccess": "User created successfully",
+    "userNotFound": "User not found",
+    "register": "Register",
+
+    "email": "Email",
+    "requiredField": "This field is required",
+    "password": "Password",
+
+    "createUser": "Create User",
+
+    "login": "Login",
+
+    "newHere": "New here",
+
+    "welcomeBack": "Welcome Back!",
+    "loginPage": "Login page",
+
+    "dateTime": "Date & Time",
+    "score": "Score (%)",
+    "autonomy": "Autonomy",
+    "competence": "Competence",
+    "relatedness": "Relatedness",
+    "wellbeing": "Wellbeing",
+
+    "startTest": "Start Wellbeing Test",
+    "wellbeingOverTime": "Wellbeing Over Time",
+
+    "wellbeingRecommendations": "Wellbeing Recommendations",
+    "improveWelbeing": "The following list presents the most critical items that might improve your wellbeing if addressed.",
+    "results": "Results",
+    "goHome": "Go home",
+
+    "wellbeingResults": "Wellbeing Results",
+    "positiveItems": "These are some items that positively contribute to your wellbeing:",
+    "noItems": "No items, but do not give up!",
+    "improveItems": "For a better sense of wellbeing, these are some areas that might need improvement:",
+    "noImprove": "No areas to improve, you are doing great!",
+    "autonomyChart": "Autonomy Chart",
+    "autonomyScore": "Autonomy Score",
+    "competenceChart": "Competence Chart",
+    "competenceScore": "Competence Score",
+    "relatednessChart": "Relatedness Chart",
+    "relatednessScore": "Relatedness Score",
+    "overallScore": "Overall Score",
+    "next": "Next",
+    "percentage": "Percentage",
+    "overall": "Overall",
+
+    "activity": "Activity: ",
+    "agreeDisagree": "How much do you agree or disagree with the following statements?",
+    "disagree": "Disagree",
+    "agree": "Agree",
+    "goBack": "Go back",
+    "previous": "Previous",
+    "submit": "Submit",
+
+    "activityCompleted": "Activity completed!",
+    "seeResults": "See results",
+
+    "updatePassword": "Update password",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "repeatNewPassword": "Repeat new password",
+    "save": "Save",
+
+    "passwordChangedSuccessfully": "Password changed successfully",
+
+    "settings": "Settings",
+    "language": "Language",
+    "english": "English",
+    "spanish": "Spanish",
+    "catalan": "Catalan",
+    "darkMode": "Dark Mode",
+    "signOut": "Sign Out"
+
+}
