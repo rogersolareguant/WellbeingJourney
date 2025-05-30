@@ -5,7 +5,6 @@ import 'package:wellbeing_journey/data/wellbeing_data.dart';
 import 'package:wellbeing_journey/presentation/screens/questionnaire/cubit/questionnaire_cubit.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 class QuestionsPage extends StatefulWidget {
   const QuestionsPage({super.key});
 
@@ -31,7 +30,20 @@ class _QuestionsPageState extends State<QuestionsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+        body: Stack(children: [
+      Positioned(
+        top: -30,
+        left: 150,
+          child: RotatedBox(
+            quarterTurns: 1,
+            child: Image.asset(
+              'assets/images/logo.png',
+              scale: 1.7,
+            ),
+          ),
+        
+      ),
+      SafeArea(
         child: PageView.builder(
           controller: _pageController,
           physics: const NeverScrollableScrollPhysics(),
@@ -47,7 +59,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
           },
         ),
       ),
-    );
+    ]));
   }
 }
 
@@ -84,23 +96,21 @@ class QuestionCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   TextSpan(
-                    text:
-                        AppLocalizations.of(context)!.agreeDisagree,
+                    text: AppLocalizations.of(context)!.agreeDisagree,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],
               ),
             ),
           ),
-
           Expanded(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(0, 115, 0, 115),
               child: Container(
                 decoration: BoxDecoration(
-                        color: Theme.of(context).secondaryHeaderColor,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
+                  color: Theme.of(context).secondaryHeaderColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(13.0),
                   child: Column(
@@ -131,15 +141,20 @@ class QuestionCard extends StatelessWidget {
                             color: Theme.of(context).colorScheme.onSurface,
                             fillColor: Theme.of(context).colorScheme.primary,
                             splashColor: Theme.of(context).colorScheme.primary,
-                            constraints:
-                                const BoxConstraints(minHeight: 48, minWidth: 60),
+                            constraints: const BoxConstraints(
+                                minHeight: 48, minWidth: 60),
                             textStyle: Theme.of(context).textTheme.bodyLarge,
                             children: const [
-                              Padding(padding: EdgeInsets.all(8), child: Text('1')),
-                              Padding(padding: EdgeInsets.all(8), child: Text('2')),
-                              Padding(padding: EdgeInsets.all(8), child: Text('3')),
-                              Padding(padding: EdgeInsets.all(8), child: Text('4')),
-                              Padding(padding: EdgeInsets.all(8), child: Text('5')),
+                              Padding(
+                                  padding: EdgeInsets.all(8), child: Text('1')),
+                              Padding(
+                                  padding: EdgeInsets.all(8), child: Text('2')),
+                              Padding(
+                                  padding: EdgeInsets.all(8), child: Text('3')),
+                              Padding(
+                                  padding: EdgeInsets.all(8), child: Text('4')),
+                              Padding(
+                                  padding: EdgeInsets.all(8), child: Text('5')),
                             ],
                           );
                         },
@@ -160,7 +175,6 @@ class QuestionCard extends StatelessWidget {
               ),
             ),
           ),
-
           Row(
             children: [
               if (isFirst)
@@ -181,12 +195,13 @@ class QuestionCard extends StatelessWidget {
                 builder: (context, state) {
                   final hasAnswered =
                       state.selectedIndexes[questionIndex] != -1;
-
                   return FilledButton(
                     onPressed: hasAnswered
                         ? () {
                             if (isLast) {
-                              context.read<QuestionnaireCubit>().submitAnswers();
+                              context
+                                  .read<QuestionnaireCubit>()
+                                  .submitAnswers();
                               context.go('/test_done');
                             } else {
                               controller.nextPage(
@@ -196,7 +211,9 @@ class QuestionCard extends StatelessWidget {
                             }
                           }
                         : null,
-                    child: Text(isLast ? AppLocalizations.of(context)!.submit : AppLocalizations.of(context)!.next),
+                    child: Text(isLast
+                        ? AppLocalizations.of(context)!.submit
+                        : AppLocalizations.of(context)!.next),
                   );
                 },
               ),
@@ -207,4 +224,3 @@ class QuestionCard extends StatelessWidget {
     );
   }
 }
-

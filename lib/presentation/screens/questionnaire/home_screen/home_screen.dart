@@ -46,58 +46,76 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Center(
-              child: Column(
-                children: [
-                  const SizedBox(height: 75),
-                  ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Theme.of(context).colorScheme.primary,
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 20),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        elevation: 6,
-                        shadowColor: Colors.black54,
-                        textStyle: Theme.of(context).textTheme.titleSmall),
-                    onPressed: () {
-                      context.go('/home/questions');
-                    },
-                    icon: const Icon(Icons.play_arrow_rounded, size: 30),
-                    label: Text(AppLocalizations.of(context)!.startTest),
-                  ),
-                  const SizedBox(height: 100),
-                  // Gráfico general
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).secondaryHeaderColor,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(13.0),
-                      child: SizedBox(
-                        height: 250,
-                        child: WellbeingLineChart(
-                          title: AppLocalizations.of(context)!.wellbeingOverTime,
-                          scoreExtractor: (e) => e.overallScore,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 45),
-                  const DimensionChartSwitcher(),
-                  const SizedBox(height: 25),
-                ],
+      body: Stack(
+        children: [
+          Positioned(
+            left: 70,
+            child: RotatedBox(
+              quarterTurns: 0,
+              child: Image.asset(
+                'assets/images/logo.png',
+                scale: 2.7,
               ),
             ),
           ),
-        ),
+          // Contenido principal
+          SafeArea(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Center(
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 75),
+                      ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 20),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          elevation: 6,
+                          shadowColor: Colors.black54,
+                          textStyle: Theme.of(context).textTheme.titleSmall,
+                        ),
+                        onPressed: () {
+                          context.go('/home/questions');
+                        },
+                        icon: const Icon(Icons.play_arrow_rounded, size: 30),
+                        label:
+                            Text(AppLocalizations.of(context)!.startTest),
+                      ),
+                      const SizedBox(height: 100),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).secondaryHeaderColor,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(13.0),
+                          child: SizedBox(
+                            height: 250,
+                            child: WellbeingLineChart(
+                              title: AppLocalizations.of(context)!
+                                  .wellbeingOverTime,
+                              scoreExtractor: (e) => e.overallScore,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 45),
+                      const DimensionChartSwitcher(),
+                      const SizedBox(height: 25),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
