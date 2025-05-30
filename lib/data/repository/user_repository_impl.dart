@@ -55,25 +55,6 @@ class UserRepositoryImpl extends UserRepository {
   } 
 
   @override
-  Future<String> getUserName(String uid) async {
-    try {
-      final doc = await _firestore.collection('users').doc(uid).get();
-      return doc.data()?['name'] ?? '';
-    } catch (_) {
-      throw Exception('Error retrieving user name');
-    }
-  }
-
-  @override
-  Future<void> setUserName(String uid, String name) async {
-    try {
-      await _firestore.collection('users').doc(uid).update({'name': name});
-    } catch (_) {
-      throw Exception('Error updating user name');
-    }
-  }
-
-  @override
   Future<void> reauthenticateWithPassword(String currentPassword) async {
     try {
       final user = _auth.currentUser;

@@ -94,58 +94,70 @@ class QuestionCard extends StatelessWidget {
           ),
 
           Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  questionText,
-                  style: Theme.of(context).textTheme.titleSmall,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 40),
-                BlocBuilder<QuestionnaireCubit, QuestionnaireState>(
-                  builder: (context, state) {
-                    return ToggleButtons(
-                      isSelected: List.generate(
-                        5,
-                        (i) => state.selectedIndexes[questionIndex] == i,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 115, 0, 115),
+              child: Container(
+                decoration: BoxDecoration(
+                        color: Theme.of(context).secondaryHeaderColor,
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      onPressed: (int i) {
-                        context
-                            .read<QuestionnaireCubit>()
-                            .selectIndex(questionIndex, i);
-                      },
-                      borderRadius: BorderRadius.circular(12),
-                      borderWidth: 1.5,
-                      borderColor: Colors.black54,
-                      selectedColor: Colors.white,
-                      color: Theme.of(context).colorScheme.onSurface,
-                      fillColor: Theme.of(context).colorScheme.primary,
-                      splashColor: Theme.of(context).colorScheme.primary,
-                      constraints:
-                          const BoxConstraints(minHeight: 48, minWidth: 65),
-                      textStyle: Theme.of(context).textTheme.bodyLarge,
-                      children: const [
-                        Padding(padding: EdgeInsets.all(8), child: Text('1')),
-                        Padding(padding: EdgeInsets.all(8), child: Text('2')),
-                        Padding(padding: EdgeInsets.all(8), child: Text('3')),
-                        Padding(padding: EdgeInsets.all(8), child: Text('4')),
-                        Padding(padding: EdgeInsets.all(8), child: Text('5')),
-                      ],
-                    );
-                  },
+                child: Padding(
+                  padding: const EdgeInsets.all(13.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        questionText,
+                        style: Theme.of(context).textTheme.titleSmall,
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 40),
+                      BlocBuilder<QuestionnaireCubit, QuestionnaireState>(
+                        builder: (context, state) {
+                          return ToggleButtons(
+                            isSelected: List.generate(
+                              5,
+                              (i) => state.selectedIndexes[questionIndex] == i,
+                            ),
+                            onPressed: (int i) {
+                              context
+                                  .read<QuestionnaireCubit>()
+                                  .selectIndex(questionIndex, i);
+                            },
+                            borderRadius: BorderRadius.circular(12),
+                            borderWidth: 1.5,
+                            borderColor: Colors.black54,
+                            selectedColor: Colors.white,
+                            color: Theme.of(context).colorScheme.onSurface,
+                            fillColor: Theme.of(context).colorScheme.primary,
+                            splashColor: Theme.of(context).colorScheme.primary,
+                            constraints:
+                                const BoxConstraints(minHeight: 48, minWidth: 60),
+                            textStyle: Theme.of(context).textTheme.bodyLarge,
+                            children: const [
+                              Padding(padding: EdgeInsets.all(8), child: Text('1')),
+                              Padding(padding: EdgeInsets.all(8), child: Text('2')),
+                              Padding(padding: EdgeInsets.all(8), child: Text('3')),
+                              Padding(padding: EdgeInsets.all(8), child: Text('4')),
+                              Padding(padding: EdgeInsets.all(8), child: Text('5')),
+                            ],
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Text(AppLocalizations.of(context)!.disagree,
+                              style: Theme.of(context).textTheme.bodySmall),
+                          const Spacer(),
+                          Text(AppLocalizations.of(context)!.agree,
+                              style: Theme.of(context).textTheme.bodySmall),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                const SizedBox(height: 10),
-                Row(
-                  children: [
-                    Text(AppLocalizations.of(context)!.disagree,
-                        style: Theme.of(context).textTheme.bodySmall),
-                    const Spacer(),
-                    Text(AppLocalizations.of(context)!.agree,
-                        style: Theme.of(context).textTheme.bodySmall),
-                  ],
-                ),
-              ],
+              ),
             ),
           ),
 

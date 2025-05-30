@@ -105,6 +105,7 @@ class DimensionChartSwitcher extends StatelessWidget {
           children: [
             DropdownButton<String>(
               value: selectedDimension,
+              dropdownColor: Theme.of(context).secondaryHeaderColor,
               onChanged: (value) {
                 if (value != null) {
                   context

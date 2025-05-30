@@ -43,20 +43,38 @@ class QuestionnaireCubit extends Cubit<QuestionnaireState> {
             (relatedness / maxRelatedness * 100)) /
         3;
 
-    final worstAutonomy = _getExtremeQuestions(scoresMap: scoresMaps[WellbeingDimension.autonomy]!, best: false, limit: 3);
-    final worstCompetence = _getExtremeQuestions(scoresMap: scoresMaps[WellbeingDimension.competence]!, best: false, limit: 3);
-    final worstRelatedness = _getExtremeQuestions(scoresMap: scoresMaps[WellbeingDimension.relatedness]!, best: false, limit: 3);
+    final worstAutonomy = _getExtremeQuestions(
+        scoresMap: scoresMaps[WellbeingDimension.autonomy]!,
+        best: false,
+        limit: 2);
+    final worstCompetence = _getExtremeQuestions(
+        scoresMap: scoresMaps[WellbeingDimension.competence]!,
+        best: false,
+        limit: 2);
+    final worstRelatedness = _getExtremeQuestions(
+        scoresMap: scoresMaps[WellbeingDimension.relatedness]!,
+        best: false,
+        limit: 2);
 
     emit(state.copyWith(
       autonomyScore: (autonomy / maxAutonomy * 100).round(),
       competenceScore: (competence / maxCompetence * 100).round(),
       relatednessScore: (relatedness / maxRelatedness * 100).round(),
       overall: overall.round(),
-      bestAutonomy: _getExtremeQuestions(scoresMap: scoresMaps[WellbeingDimension.autonomy]!, best: true, limit: 3),
+      bestAutonomy: _getExtremeQuestions(
+          scoresMap: scoresMaps[WellbeingDimension.autonomy]!,
+          best: true,
+          limit: 2),
       worstAutonomy: worstAutonomy,
-      bestCompetence: _getExtremeQuestions(scoresMap: scoresMaps[WellbeingDimension.competence]!, best: true, limit: 3),
+      bestCompetence: _getExtremeQuestions(
+          scoresMap: scoresMaps[WellbeingDimension.competence]!,
+          best: true,
+          limit: 2),
       worstCompetence: worstCompetence,
-      bestRelatedness: _getExtremeQuestions(scoresMap: scoresMaps[WellbeingDimension.relatedness]!, best: true, limit: 3),
+      bestRelatedness: _getExtremeQuestions(
+          scoresMap: scoresMaps[WellbeingDimension.relatedness]!,
+          best: true,
+          limit: 2),
       worstRelatedness: worstRelatedness,
       recommendationsAutonomy: _getRecommendationsFor(worstAutonomy),
       recommendationsCompetence: _getRecommendationsFor(worstCompetence),
@@ -77,7 +95,6 @@ class QuestionnaireCubit extends Cubit<QuestionnaireState> {
       final answer = question.isReversed ? 6 - answers[i] : answers[i];
       scores[question.dimension] = scores[question.dimension]! + answer;
 
-      // Save for top/worst logic
       scoresMaps[question.dimension]![i] = answer;
     }
 
@@ -155,9 +172,14 @@ class QuestionnaireCubit extends Cubit<QuestionnaireState> {
   }
 
   void updateSelectedDimension(String dimension) {
-  emit(state.copyWith(selectedDimension: dimension));
-}
+    emit(state.copyWith(selectedDimension: dimension));
+  }
 
+  void reset() {
+    emit(QuestionnaireState(
+      selectedIndexes: List.filled(wellbeingQuestions.length, -1),
+    ));
+  }
 
   void signOut() async {
     await _repository.signOut();

@@ -142,6 +142,7 @@ class RecommendationsScreen extends StatelessWidget {
                         FilledButton(
                           onPressed: () {
                             context.read<QuestionnaireCubit>().saveAnswersToFirebase();
+                            context.read<QuestionnaireCubit>().reset();
                             context.go('/home');
                           },
                           child: Text(AppLocalizations.of(context)!.goHome),
